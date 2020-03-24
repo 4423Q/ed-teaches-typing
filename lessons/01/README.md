@@ -50,9 +50,159 @@ In chrome you can go to the main menu -> more tools -> developer tools, and then
 Give it a go!
 Try typing `2 + 2` in there, it should look like this after you've pressed enter.
 
-`> 2 + 2
-<- 4`
+```
+> 2 + 2
+<- 4
+```
 
-Congratulations you just ran some Javascript.
+Congratulations, you just ran some Javascript!
 
 ### Data
+
+In order to solve problems with Javascript you have to start by learning how to store data (or information), then you can make decisions based on that data.
+
+#### Variables
+
+To do this we **declare** a **variable** and then **assign** some data to that variable. (I'm going to try to use **bold words** to indicate useful terms you can look up if you get stuck or confused.)
+
+The most simple declaration looks like this:
+
+```javascript
+var empty
+```
+
+This says: "Declare a new variable (var) called empty and don't assign it to anything."
+
+If you try this in the chrome console (aka terminal) you can then type `empty` and look at what's in it. (If you type something in the chrome terminal it will just tell you what is "inside it"). It should autocomplete now because `empty` has been declared so chrome knows it exists. 
+
+It should come back and say `undefined`. This means that while the name exists we haven't told Javascript what it refers to. It's a label pointing to nothing.
+
+We do this with **assignment**.
+
+```javascript
+empty = 0
+```
+
+This says: "Assign the variable called empty to be 0".
+
+Now if you type `empty` in the terminal it should come back with `0`. It's not `undefined` any more!
+
+You can also do this in one go with
+```javascript
+var empty = 0
+```
+
+This says: "Declare a new variable (var) called empty and assign it to be 0".
+
+Javascript lets you declare variables as many times as you want, and effectively overwrites the one with the same name. You can also change the value that the variable "contains" whenever you want (that's why it's called "variable")
+
+#### Data Types
+
+Javascript has a concept where each category of data has a **type**, and these **types** can do different things. The simple types look like this:
+
+##### Booleans
+```javascript
+var boolean1 = true
+var boolean2 = false
+```
+Booleans can either be `true` or `false`, and `true` is not `false`. This lets you make decisions using `if` statements, which we'll get to soon.
+
+##### Numbers
+```javascript
+var number1 = 123
+var number2 = 123.00123123
+```
+
+Numbers can either be decimals or non-decimals, `100` is the same as `100.0`.
+
+##### Strings
+```javascript
+var string1 = "The quick brown fox"
+var string2 = 'jumped over the lazy dog'
+```
+
+Strings are a collection of text characters in order. It doesn't matter whether you use single quotes or double quotes.
+
+##### Lists
+```javascript
+var list1 = [ 1, 2, 3 ]
+var list2 = [ "Dog", "Cat", true, false ]
+```
+
+Lists are a collection of any data type that have an order. You can look at items in a list and change the items in the list (**assign**) using their position (starting at 0).
+```javascript
+list1[0]
+```
+Gives: `1`
+
+```javascript
+list2[2]
+```
+Gives: `true`
+
+```javascript
+list2[1] = 'Horse'
+list2
+```
+Gives: `[ "Dog", "Horse", true, false ]`
+
+
+##### Objects
+```javascript
+var object1 = {
+  a: 'a',
+  b: 'b',
+  c: 'c'
+}
+var object2 = {
+  name: 'bill',
+  species: 'cat',
+  age: 400
+}
+```
+
+Objects are a collection of any data types (the bit on the right of the `:`) that don't have orders, but do have labels (the bit on the left of the `:`). You can look at and change the items using their labels.
+
+```javascript
+object2.name
+```
+Gives: 'bill'
+
+```javascript
+object2.species = 'dog'
+object2
+```
+Gives: 
+```
+{
+  name: 'bill',
+  species: 'dog',
+  age: 400
+}
+```
+
+##### Functions
+```javascript
+var function1 = function () {}
+function function2 () {}
+var function3 = () => {}
+```
+
+Functions are a way of packaging up code to be run later or repeatedly.
+```javascript
+var number = 0;
+
+function add1 () {
+  number = number + 1
+}
+
+add1()
+add1()
+add1()
+
+number
+```
+Gives: `3`
+
+
+####
