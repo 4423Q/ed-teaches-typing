@@ -41,6 +41,9 @@ For learning programming in this course we're going to be using Javascript.
 * Huge amount of free code out there in Javascript that you can use to get stuff done.
 * I know it pretty well
 
+### Resources
+For more information on javascript I recommend the [MDN JavasScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript). It can be a little dense but it's probably the best resource out there for good information on every part of javascript. You should probably have some idea of what you're looking for before you go there, but the articles are very good.
+
 ### How do I run Javascript?
 
 Most web browsers have an easy way to run javascript built in (because Javascript runs on almost all webpages).
@@ -182,13 +185,21 @@ Gives:
 ```
 
 ##### Functions
+(NOTE: `console` is a special object that's built into most javascript terminals, and `console.log` is an instruction that says "put whatever's in the brackets on the screen")
 ```javascript
-var function1 = function () {}
-function function2 () {}
-var function3 = () => {}
+var function1 = function () {
+  console.log("Hello")
+}
+function function2 (argument) {
+  console.log("Hello," + argument)
+}
+var function3 = () => {
+  console.log("Hello")
+}
 ```
 
-Functions are a way of packaging up code to be run later or repeatedly.
+Functions are a way of packaging up code to be run later or repeatedly. The things in the first set of round brackets are called the **arguments** or **parameters**, and the stuff in the squiggly/curly brackets is the **body**, the code that gets run.
+
 ```javascript
 var number = 0;
 
@@ -196,13 +207,73 @@ function add1 () {
   number = number + 1
 }
 
+function add (addition) {
+  number = number + addition
+}
+
 add1()
 add1()
-add1()
+add(2)
 
 number
 ```
-Gives: `3`
+Gives: `4`
 
 
-####
+#### Comparisons
+A **comparison** is a way of converting things that aren't booleans into booleans so we can make decisions.
+
+(Note // indicates a comment, anything on a line after the // won't get run by javascript, people often use this to show what the previous code "gives" (**evaluates** to))
+
+The most basic comparison is `===`, the **strict equality operator**. This compares two things and turns them into a boolean, `true` if they are exactly equal, `false` otherwise.
+```javascript
+1 === 1
+```
+Gives: `true`
+```javascript
+1 === 2
+```
+Gives: `false`
+
+Another comparison is `>`, the "greater than" **operator**.
+
+```javascript
+2 > 1 // Gives: true
+1 > 2 // Gives: false
+```
+
+To read more about comparisons check out the [MDN Article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
+
+#### If Statement
+
+Now we know how to convert other data to booleans we can make decisions based on the boolean, and run different code depending on the value of the boolean using an if statement:
+```javascript
+var result;
+if (number === 0) {
+  // do this thing
+  result = "It was true";
+} else {
+  // do this other thing
+  result = "It was false";
+}
+```
+if `number === 0` is true, the first path will get run, otherwise, the second one will.
+Multiple checks can be done using `else if`.
+
+```javascript
+var result;
+if (number === 0) {
+  // do this thing
+  result = "It was zero";
+} else if (number === 1) {
+  // OR do this other thing
+  result = "It was one";
+} else {
+  // FINALLY do this other other thing
+  result = "It was something else";
+}
+```
+
+Only ONE of these paths will ever run.
+
+Now you should be able to have a go at reading and understanding the [code sample](./animalCallCentre.js)
