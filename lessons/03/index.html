@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="index.css" />
+
+<div id="mainSection" class="blue">
+  <h1>Title</h1>
+  <p>Hello World</p>
+  <p id="secondParagraph">Second paragraph</p>
+  <button id="helloButton">Our Covid Response</button>
+</div>
+
+<script>
+  //alert('Hello, covid19')
+  var button = document.querySelector('#helloButton')
+  button.addEventListener('click', function (event) {
+    if (event.shiftKey) {
+      button.innerHTML = 'BUTTON HAS BEEN CLICKED'
+    } else {
+      button.innerHTML = 'BUTTON has been clicked'
+    }
+    setTimeout(function () {
+      button.innerHTML = 'Our Covid Response'
+    }, 2000)
+  })
+  var title = document.querySelector('h1')
+
+  setTimeout(function () {
+    title.innerHTML = '5 seconesd elapserd'
+    setTimeout(function () {
+      title.innerHTHML = '7 seconds aldwalf'
+    }, 2000)
+  }, 5000)
+</script>

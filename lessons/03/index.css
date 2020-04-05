@@ -1,0 +1,15 @@
+p {
+  font-weight: bold;
+}
+
+h1 {
+  color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+#secondParagraph {
+  background-color: lightblue;
+}
